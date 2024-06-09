@@ -13,10 +13,19 @@ public interface UserService extends IService<User> {
      * @param userAccount
      * @param userPassword
      * @param checkPassword
-     * @param planetCode
      * @return new user ID
      */
-    long userRegister(String userAccount, String userPassword, String checkPassword, String planetCode);
+    long userRegister(String userAccount, String userPassword, String checkPassword);
+
+    /**
+     * user log in
+     *
+     * @param userAccount
+     * @param userPassword
+     * @param request
+     * @return User information after hiding sensitive information
+     */
+    User userLogin(String userAccount, String userPassword, HttpServletRequest request);
 
 }
 
